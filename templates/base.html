@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>MoviWeb App</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>🎬 MoviWeb</h1>
+
+            <nav>
+                <a href="{{ url_for('home') }}">Home</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            {% block content %}{% endblock %}
+        </main>
+
+    </body>
+</html>

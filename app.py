@@ -38,7 +38,7 @@ def add_user():
     return redirect(url_for('home'))
 
 
-@app.route('/users/<int:user_id>/movies', methods=['GET'])
+@app.route('/users/<int:user_id>/movies')
 def user_movies(user_id):
     movies = data_manager.get_movies(user_id)
     return str(movies)
