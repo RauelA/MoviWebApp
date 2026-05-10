@@ -65,12 +65,10 @@ def add_movie(user_id):
     if not title:
         return "Missing movie title", 400
 
-    # OMDb call
     url = f"http://www.omdbapi.com/?t={title}&apikey={OMDB_API_KEY}"
     response = requests.get(url)
     data = response.json()
 
-    # SAFE FALLBACKS
     movie_name = data.get("Title") or title
     director = data.get("Director") or "Unknown"
     poster = data.get("Poster") or ""

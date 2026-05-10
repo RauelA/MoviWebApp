@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>MoviWeb App</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoviWeb</title>
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
-    <body>
+<body>
 
-        <header>
-            <h1>🎬 MoviWeb</h1>
+<header>
+    <h1 onclick="window.location='{{ url_for('index') }}'" style="cursor:pointer;">
+        🎬 MoviWeb
+    </h1>
 
-            <nav>
-                <a href="{{ url_for('index') }}">Home</a>
-            </nav>
-        </header>
+    <nav>
+        <a href="{{ url_for('index') }}">Users</a>
+    </nav>
+</header>
 
-        <main class="container">
-            {% block content %}{% endblock %}
-        </main>
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
 
-    </body>
+</body>
 </html>
